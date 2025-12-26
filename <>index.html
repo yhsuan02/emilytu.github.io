@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>徵選個人資料 | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: move 10s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(20px, -20px) scale(1.1); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #5437a5 0%, #8e79be 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Bento Grid Styles */
+        .bento-item {
+            transition: all 0.3s ease;
+        }
+        .bento-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-800 relative overflow-x-hidden">
+
+    <!-- 背景裝飾 -->
+    <div class="blob bg-blue-300 w-96 h-96 rounded-full top-0 left-0 mix-blend-multiply"></div>
+    <div class="blob bg-teal-300 w-96 h-96 rounded-full bottom-0 right-0 mix-blend-multiply"></div>
+
+    <!-- 1. 導航列 (依要求更新目錄) -->
+    <nav class="fixed w-full z-50 glass-card border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter heading-font"><span class="text-teal-600"> </span></div>
+            <!-- 手機版漢堡選單省略，直接做桌面版 -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-teal-600 transition">關於我</a>
+                <a href="#video" class="hover:text-teal-600 transition">自我介紹影片</a>
+                <a href="#portfolio" class="hover:text-teal-600 transition">作品集</a>
+                <a href="#english" class="hover:text-teal-600 transition">英文檢定證明</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (保持簡潔) -->
+    <header class="min-h-[80vh] flex items-center justify-center pt-20 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-block px-4 py-2 rounded-full bg-white/50 border border-slate-200 text-sm font-medium text-slate-500 mb-6 animate-pulse">
+                
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 heading-font leading-tight">
+                <span class="gradient-text">2026亞運青年記者培訓計畫</span><br>
+                <span class="text-slate-400 text-2xl md:text-3xl">杜以璇 Emily TU</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+               
+            </p>
+            <div class="flex justify-center">
+                <a href="#about" class="animate-bounce text-slate-400">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 關於我 (六大區塊 Bento Grid) -->
+    <section id="about" class="py-20 bg-white/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold heading-font mb-8 flex items-center">
+                <span class="w-2 h-8 bg-[#e9c414] mr-3 rounded-full"></span>
+                關於我 About Me
+            </h2>
+            
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
+                
+                <!-- 區塊 1: 自我介紹 (佔兩格寬) -->
+                <div class="glass-card p-8 rounded-2xl md:col-span-2 bento-item">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="bg-blue-100 p-3 rounded-lg text-blue-600"><i class="fas fa-user"></i></div>
+                        <h3 class="text-xl font-bold mt-1">自我介紹 Introduction</h3>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <img src="profile.pic.JPEG" alt="Profile" class="w-32 h-32 rounded-full object-cover object-top border-4 border-white shadow-md flex-shrink-0">
+                        <div class="space-y-3">
+                            <p class="text-slate-600 leading-relaxed">
+                                我的個性外向、活潑，對世界富有好奇心，樂於探索不同領域的人事物。因此在大學期間我逐漸確立了想要成為記者的志向，希望透過第一線採訪不斷擴張自己的視野，發掘平常難以被發掘的社會角落，作為他們和大眾間傳遞的橋樑。
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                求學期間，我在政大新聞系實習媒體<strong class="font-semibold text-slate-800">《大學報》擔任記者，主要負責體育與校園線</strong>，也有製作深度專題、影音新聞、融媒體的經驗，累積紮實的採訪與撰稿能力；大四時接任<strong class="font-semibold text-slate-800">生活版採訪主任</strong>，指導和帶領學弟妹撰寫生活線新聞，從選題、面向規劃、再到稿件修改皆需全程把關，進一步提升我對議題的判斷能力、文字編輯能力，以及團隊協作與溝通能力。
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                我的興趣廣泛，願意踏出舒適圈並積極嘗試新事物，因此在大學時期我加了<strong class="font-semibold text-slate-800">政大之聲，擔任廣播節目主持人，也製作廣播新聞與播報</strong>，訓練我的口語表達和臨場反應力。此外，擔任吉他社幹部、參與營隊籌備的經歷，也讓我累積了活動企劃與社群經營的實務能力。
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                為了在瞬息萬變的媒體環境中建立競爭力，我選擇繼續深造，現就讀<strong class="font-semibold text-slate-800">政大傳播所</strong>。而在學術之外，我也積極培養實務經驗：在<strong class="font-semibold text-slate-800">政大秘書處擔任校訊記者</strong>，強化新聞撰寫與公關應對能力；而在網路媒體Beauty美人圈編輯部的工作中，提升我對流行趨勢的敏銳度和掌握熱門話題的反應力。
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-500">#外向</span>
+                                <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-500">#積極</span>
+                                <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-500">#好奇心</span>
+                                <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-500">#勇於嘗試</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 區塊 2: 學歷 -->
+                <div class="glass-card p-8 rounded-2xl bento-item bg-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-teal-100 p-2 rounded-lg text-teal-600"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="text-xl font-bold">學歷 Education</h3>
+                    </div>
+                    <ul class="space-y-4 relative border-l-2 border-slate-100 ml-2 pl-4">
+                        <li class="relative">
+                            <div class="absolute -left-[21px] top-1.5 w-3 h-3 bg-teal-500 rounded-full border-2 border-white"></div>
+                            <div class="font-bold text-slate-800">國立政治大學傳播所</div>
+                            <div class="text-sm text-slate-500">2025.9-今</div>
+                            <div class="text-xs text-slate-400"></div>
+                        </li>
+                        <li class="relative">
+                            <div class="absolute -left-[21px] top-1.5 w-3 h-3 bg-slate-300 rounded-full border-2 border-white"></div>
+                            <div class="font-bold text-slate-800">國立政治大學新聞系</div>
+                            <div class="text-sm text-slate-500">2021.9-2025.6</div>
+                            <div class="text-xs text-slate-400"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 區塊 3: 經歷 (佔滿高) -->
+                <div class="glass-card p-8 rounded-2xl md:row-span-2 bento-item bg-white">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-purple-100 p-2 rounded-lg text-purple-600"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="text-xl font-bold">經歷 Experience</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">記者</h4>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">2023.9-2024.6</span>
+                            </div>
+                            <p class="text-sm text-teal-600 mb-2">@ 政大大學報</p>
+                            <p class="text-sm text-slate-500    leading-relaxed">
+                                大三上擔任校園版、體育版記者，單學期撰寫校園新聞四篇、體育新聞六篇、影音新聞兩則。下學期則擔任專題新聞記者，撰寫三篇平面報專題導並製作一篇融媒體。
+                            </p>
+                        </div>
+                        <hr class="border-slate-100">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">採訪主任</h4>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">2024.9-2024.12</span>
+                            </div>
+                            <p class="text-sm text-teal-600 mb-2">@ 政大大學報</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                大四上擔任生活版採訪主任，指導學弟妹撰寫生活類型新聞，校稿超過45篇。
+                            </p>
+                        </div>
+                        <hr class="border-slate-100">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">校訊記者</h4>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">現職</span>
+                            </div>
+                            <p class="text-sm text-teal-600 mb-2">@ 政大秘書處</p>            
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                目前累積撰寫12篇校內活動稿件，包含講座、論壇、校際活動、人物專訪等等。
+                            </p>
+                        </div>
+                        <hr class="border-slate-100">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">編輯部工讀</h4>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">現職</span>
+                            </div>
+                            <p class="text-sm text-teal-600 mb-2">@ Beauty美人圈</p>            
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                撰寫名人、影視、生活、流行、美妝等文章。
+                            </p>
+                        </div>
+                        <hr class="border-slate-100">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">實習電台助理</h4>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">2022.9-2024.12</span>
+                            </div>
+                            <p class="text-sm text-teal-600 mb-2">@ 政大之聲實習廣播電台</p>            
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                製作廣播新聞、Live新聞編播、擔任包種茶節轉播主持人、製作個人廣播節目。
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h4 class="font-bold text-slate-800 text-lg">獲獎經歷</h4>
+                            </div>          
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                2024全球華文永續報導獎融媒體優等、第二十二屆新傳獎最佳融媒體獎/文化平權獎
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 區塊 4: 申請動機 -->
+                <div class="glass-card p-8 rounded-2xl md:col-span-2 hover:bg-purple-50 transition-colors bento-item">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-purple-100 p-2 rounded-lg text-yellow-600 group-hover:bg-yellow-200 transition"><i class="fas fa-medal"></i></div>
+                        <h3 class="text-xl font-bold">申請動機 Motivation</h3>
+                    </div>
+                        <p class="text-black-50 leading-relaxed mb-4">
+                            受家人影響，我自小便投身羽球訓練，高三時更代表學校參與<strong class="font-semibold text-slate-800">全中運</strong>。長時間的訓練與備賽經驗，讓我深刻體會到運動場上的不易，而這份情感連結，成為我日後擔任體育記者時的養分，使我以同理心來看待選手面臨的壓力和困境。
+                        </p>
+                        <p class="text-black-50 leading-relaxed mb-4">
+                            大學進入系上實習媒體《大學報》跑報時，我選擇了<strong class="font-semibold text-slate-800">體育版，正式開啟體育記者生涯</strong>。首篇的體育新聞，便是獨自前往台南報導全中運排球賽事。首次以記者身分踏入球場，我不再是選手或觀眾，而是要展現專業能力，即時觀察賽況、分析戰術、採訪國家級選手。那一刻獲得的滿足與成就感，<strong class="font-semibold text-slate-800">點燃也堅定了想要繼續報導體育賽事的決心。</strong>
+                        </p>
+                        <p class="text-black-50 leading-relaxed mb-4">
+                            <strong class="font-semibold text-slate-800">擔任體育記者期間，我共採訪六種運動項目</strong>，包括排球、手球、室內划船、啦啦隊、定向越野、武術，許多項目皆是我過去未曾深入接觸的運動。透過一次次採訪，我了解到選手長期訓練的辛勞、制度限制下的困境，以及各項運動背後的歷史脈絡與發展難題，也更加體認到體育記者在選手與大眾之間所扮演的橋樑角色。
+                        </p>
+                        <p class="text-black-50 leading-relaxed mb-4">
+                            在製作深度專題報導時，我亦關注運動員相關議題，曾參與《「學生」、「運動員」身份並行　如何闖出體育班外的未來》專題報導，聚焦於體育班外的學生運動員處境。透過訪談近十位學生運動員和教練，我對臺灣體育環境的資源分配與結構問題有了更全面的認識，也進一步理解到，體育新聞除了賽事報導外，也有著教育大眾與引發反思的作用。
+                        </p>
+                        <p class="text-black-50 leading-relaxed mb-4">
+                            長期關注體育賽事並累積體育新聞實務經驗，使我深刻體認到， <strong class="font-semibold text-slate-800">體育是跨越語言與文化的重要媒介</strong>。亞洲運動會作為亞洲規模最大的綜合性運動賽事之一，不僅是競技舞台，更是各國青年選手相互交流的重要場域。若有幸參與本次青年記者培訓計畫，我期盼能結合自身體育記者經驗，於國際賽事現場以嚴謹而具人文關懷的視角，實踐奧林匹克價值，同時藉此拓展國際視野，為促進亞洲體育與文化的交流盡一份心力。
+                        </p>
+                
+                    </div>
+                </div>
+                
+    
+                        <!-- Bento Grid Layout -->
+                        <div class="mt-10 grid grid-cols-1 gap-8">
+
+                
+                <!-- 區塊 5: 亞運的歷史 -->
+                <div class="glass-card p-8 rounded-2xl md:row-span-2 bento-item group hover:bg-green-50 transition-colors">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-green-100 p-2 rounded-lg text-green-600 group-hover:bg-green-200 transition"><i class="fas fa-history"></i></div>
+                        <h3 class="text-xl font-bold">亞運的歷史</h3>
+                    </div>
+                    <p class="text-base text-slate-600 mb-4">
+                        亞洲運動會前身為遠東運動會和西亞運動會，首屆的亞運會舉辦於<strong class="font-semibold text-slate-800">1951年的印度新德里</strong>，起源於二戰後，亞洲各國希望透過體育促進交流與團結精神的理念。受到國際局勢動盪影響，在1970年代以前亞運會並無統一和制度化的管理，一直到<strong class="font-semibold text-slate-800">1981年亞洲奧林匹克理事會正式成立</strong>，接手主辦亞運會，使賽事制度與規模逐步成熟。
+                    </p>
+                    <p class="text-base text-slate-600 mb-4">
+                        台灣在1973年遭亞洲運動會聯合會移除會籍，一直到1990年的北京亞運會，在中國政府的介入之下，才得以以「中華台北」的名義重新獲准參賽。
+                    </p>
+                    <p class="text-base text-slate-600 mb-4">
+                        隨著參賽國家與項目不斷增加，亞運會發展為亞洲規模最大的綜合性運動賽事，並獲國際奧會認證為僅次於奧運會的<strong class="font-semibold text-slate-800">第二大綜合性運動會</strong>。相較奧運，亞運會納入較多非奧運正式比賽項目，如武術、卡巴迪、藤球、龍舟、電子競技等，展現亞洲文化傳統和多元的區域特色。
+                    </p>
+                    
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 gap-8">
+
+                <!-- 區塊 6: 奧林匹克價值 -->
+                <div class="glass-card p-8 rounded-2xl bento-item group hover:bg-yellow-50 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-yellow-100 p-2 rounded-lg text-yellow-600 group-hover:bg-yellow-200 transition"><i class="fas fa-medal"></i></div>
+                        <h3 class="text-xl font-bold">奧林匹克價值</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <span class="font-bold text-slate-800">卓越 Excellence</span>
+                            <span class="h-px bg-slate-200 flex-grow"></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="font-bold text-slate-800">友誼 Friendship</span>
+                            <span class="h-px bg-slate-200 flex-grow"></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="font-bold text-slate-800">尊重 Respect</span>
+                            <span class="h-px bg-slate-200 flex-grow"></span>
+                        </li>
+                    </ul>
+                    <p class="text-base text-slate-700 mt-4">
+                        奧林匹克價值以「卓越、友誼、尊重」為核心，是奧林匹克主義所欲傳遞的重要精神內涵。這套價值並不僅止於運動場上的勝負與表現，而是希望透過結合運動、文化與教育，讓人們在參與運動的過程中，體會努力的樂趣、公平競爭的意義，學會實踐尊重，並追求身體、意志與心靈的平衡發展。
+                    </p>
+                    <p class="text-base text-slate-700 mt-4">
+                        奧林匹克價值是一種貫穿於日常生活的價值原則。它鼓勵人們追求超越自我，同時也強調適度與自律；肯定個人的進取精神，也重視團隊合作與和諧共存。每個人都能在運動中培養平等、博愛與尊重他人的態度，這正是奧林匹克價值所期望達成的教育意義與社會價值。
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 自我介紹影片 (保持) -->
+    <section id="video" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold heading-font mb-4">自我介紹影片</h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="aspect-video w-full rounded-2xl overflow-hidden">
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/V3VGU9an-Vk"
+                    title="自我介紹影片"
+                    frameborder="0"
+                    llow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+        
+              </div>
+           
+        </div>
+    </section>
+
+    <!-- 4. 作品集 (保持) -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold heading-font mb-12 flex items-center">
+            <span class="w-2 h-8 bg-teal-500 mr-3 rounded-full"></span>
+            作品集 Portfolio
+          </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group">
+                    <a href="https://reurl.cc/XaaZWj" target="_blank" rel="noopener noreferrer">
+                      <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                        <img 
+                          src="vol.jpg" 
+                          alt="Project 1" 
+                          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
+                      </div>
+                    </a>
+                  
+                    <h3 class="text-lg font-bold mb-2">【全運會】上屆冠亞再交鋒 高雄力退台中奪女排首勝</h3>
+                    <p class="text-slate-600 text-sm">112年全國運動會女子組室內排球賽，同時為個人首篇體育賽事報導。</p>
+                  </div>
+                <!-- Project 2 -->
+                <div class="group">
+                    <a href="https://carmenchong2002.wixstudio.com/my-site-2" target="_blank" rel="noopener noreferrer">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                          <img 
+                            src="taeyu.jpg" 
+                            alt="Project 1" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          >
+                        </div>
+                      </a>
+                    
+                      <h3 class="text-lg font-bold mb-2">【融媒體】經典動畫換上台語面貌　成台語傳播的新轉機</h3>
+                      <p class="text-slate-600 text-sm">榮獲2024全球華文永續報導獎融媒體優等、第二十二屆新傳獎最佳融媒體獎及文化平權獎。</p>
+                    </div>
+                <!-- Project 3 -->
+                <div class="group">
+                    <a href="https://reurl.cc/dqOnbz" target="_blank" rel="noopener noreferrer">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                          <img 
+                            src="student.jpg" 
+                            alt="Project 1" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          >
+                        </div>
+                      </a>
+                    
+                      <h3 class="text-lg font-bold mb-2">【深度專題】「學生」、「運動員」身份並行　如何闖出體育班外的未來</h3>
+                      <p class="text-slate-600 text-sm">關注於在體育班以外，身處普通班卻同時具備運動員身份的學生們，所面臨的資源和生涯挑戰。</p>
+                    </div>
+                <!-- Project 4 -->
+                <div class="group">
+                    <a href="https://reurl.cc/nllqZn" target="_blank" rel="noopener noreferrer">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                          <img 
+                            src="dinshang.jpg" 
+                            alt="Project 1" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          >
+                        </div>
+                      </a>
+                    
+                      <h3 class="text-lg font-bold mb-2">【體育賽事】定向越野考驗判斷力　梁宇琪北市中正盃封后</h3>
+                      <p class="text-slate-600 text-sm">112年臺北市中正盃定向越野錦標賽。</p>
+                    </div>
+                <!-- Project 5 -->
+                <div class="group">
+                    <a href="https://reurl.cc/eVVk3W" target="_blank" rel="noopener noreferrer">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                          <img 
+                            src="handball.jpg" 
+                            alt="Project 1" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          >
+                        </div>
+                      </a>
+                    
+                      <h3 class="text-lg font-bold mb-2">【體育賽事】手球錦標賽強強對決　北市大臺體單日雙戰各取一勝</h3>
+                      <p class="text-slate-600 text-sm">112年全國手球錦標賽公開女子甲組、U21女子組賽事。</p>
+                    </div>
+                <!-- Project 6 -->
+                <div class="group">
+                    <a href="https://www.nccu.edu.tw/p/406-1000-21462,r129.php?Lang=zh-tw" target="_blank" rel="noopener noreferrer">
+                        <div class="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 bg-slate-100 shadow-sm">
+                          <img 
+                            src="jrong.jpg" 
+                            alt="Project 1" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          >
+                        </div>
+                      </a>
+                    
+                      <h3 class="text-lg font-bold mb-2">【政大校訊】臺北市長蔣萬安拜訪食蟹獴在政大的家　以自然工法再造指南溪河道</h3>
+                      <p class="text-slate-600 text-sm">於政大秘書處擔任校訊記者，撰寫新聞稿。</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 英文檢定證明 (新增區塊) -->
+    <section id="english" class="py-20 bg-blue-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold heading-font mb-12 flex items-center">
+                <span class="w-2 h-8 bg-indigo-600 mr-3 rounded-full"></span>
+                英文檢定證明 English Proficiency
+            </h2>
+            
+            <div class="glass-card rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row bg-white">
+                <!-- 左側：證書圖片 -->
+                <div class="md:w-1/2 bg-slate-200 relative min-h-[300px] flex items-center justify-center group">
+                    <img src="IMG_8865.jpg" alt="English Certificate" class="absolute inset-0 w-full h-full object-contain opacity-80 group-hover:opacity-100 transition">
+                </div>
+                
+                <!-- 右側：成績數據 -->
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        
+                        <span class="text-2xl font-bold text-slate-800">TOEIC 多益測驗</span>
+                    </div>
+                    
+                    <div class="text-5xl font-bold text-indigo-600 mb-2 heading-font">800 <span class="text-xl text-slate-400 font-normal">/ 990</span></div>
+                    
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 p-4 rounded-xl">
+                            <div class="text-xs text-indigo-500 font-bold uppercase mb-1">Listening</div>
+                            <div class="text-2xl font-bold text-indigo-900">425</div>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-xl">
+                            <div class="text-xs text-indigo-500 font-bold uppercase mb-1">Reading</div>
+                            <div class="text-2xl font-bold text-indigo-900">375</div>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-8 text-sm text-slate-600 border-t border-slate-100 pt-6">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        具備流暢英語溝通能力，能自信地進行國際交流及採訪。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="mb-4">感謝您的閱讀 | Thank you for reviewing my profile.</p>
+            
+            <p>&copy; 2025 杜以璇. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
